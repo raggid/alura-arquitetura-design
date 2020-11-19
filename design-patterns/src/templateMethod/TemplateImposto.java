@@ -4,14 +4,14 @@ public abstract class TemplateImposto implements Imposto {
 
     @Override
     public double calcula(Orcamento orcamento) {
-        if (deveUsarMaximaTaxacao(orcamento)){
-            return maximaTaxacao(orcamento);
+        if (condicional(orcamento)){
+            return taxacaoSeCondicionalVerdadeira(orcamento);
         } else {
-            return minimaTaxacao(orcamento);
+            return taxacaoSeCondicionalFalsa(orcamento);
         }
     }
 
-    protected abstract boolean deveUsarMaximaTaxacao(Orcamento orcamento);
-    protected abstract double maximaTaxacao(Orcamento orcamento);
-    protected abstract double minimaTaxacao(Orcamento orcamento);
+    protected abstract boolean condicional(Orcamento orcamento);
+    protected abstract double taxacaoSeCondicionalVerdadeira(Orcamento orcamento);
+    protected abstract double taxacaoSeCondicionalFalsa(Orcamento orcamento);
 }

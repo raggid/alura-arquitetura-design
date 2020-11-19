@@ -10,17 +10,17 @@ public class IKCV extends TemplateImposto{
     }
 
     @Override
-    protected boolean deveUsarMaximaTaxacao(Orcamento orcamento) {
+    protected boolean condicional(Orcamento orcamento) {
         return orcamento.getValor() > 500.0 && itemComValorSuperiorACem(orcamento);
     }
 
     @Override
-    protected double maximaTaxacao(Orcamento orcamento) {
+    protected double taxacaoSeCondicionalVerdadeira(Orcamento orcamento) {
         return orcamento.getValor() * 0.1;
     }
 
     @Override
-    protected double minimaTaxacao(Orcamento orcamento) {
+    protected double taxacaoSeCondicionalFalsa(Orcamento orcamento) {
         return orcamento.getValor() * 0.06;
     }
 
