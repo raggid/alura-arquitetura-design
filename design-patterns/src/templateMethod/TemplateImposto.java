@@ -3,7 +3,7 @@ package templateMethod;
 public abstract class TemplateImposto implements Imposto {
 
     @Override
-    public double calcula(Orcamento orcamento) {
+    public final double calcula(Orcamento orcamento) {
         if (condicional(orcamento)){
             return taxacaoSeCondicionalVerdadeira(orcamento);
         } else {

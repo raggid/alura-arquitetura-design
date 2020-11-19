@@ -6,7 +6,8 @@ import java.util.List;
 public abstract class TemplateRelatorio implements Relatorio {
 
     @Override
-    public void imprimeRelatorio(Banco banco) {
+//    Modificador final para evitar que as classes filhas modifiquem o comportamento do método principal.
+    public final void imprimeRelatorio(Banco banco) {
         imprimeArea(pegaDadosCabecalho(banco));
         System.out.println(String.join("", Collections.nCopies(10, "-")));
         imprimeArea(pegaDadosCorpo(banco));
